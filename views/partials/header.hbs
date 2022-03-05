@@ -1,0 +1,36 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class=" navbar-brand" href="/">CODING BOOKS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav w-100">
+
+            <li class="nav-item  ml-lg-auto">
+                <a class="nav-link" href="/shopping-cart/">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                    <span class="badge">{{session.cart.totalQty}}</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown bg-dark">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User <span
+                        class="caret"></span> </a>
+
+                <ul class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                    {{# if login }}
+                    <li><a class="nav-link" href="/user/profile"> Orders</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="nav-link" href="/user/logout">Logout</a></li>
+                    {{ else }}
+                    <li><a class="nav-link" href="/user/signup">Sign up</a></li>
+                    <li><a class="nav-link" href="/user/signin">Sign in</a></li>
+                    {{/if}}
+
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+</nav>
